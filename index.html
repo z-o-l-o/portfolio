@@ -1,0 +1,590 @@
+<script src="https://use.fontawesome.com/d500636162.js"></script>
+
+<style>
+
+:root {
+  --zv-white: #fff;
+  --zv-red: #daa520;/*#ff4a57; *#be3144;*/
+  --zv-blue: #1F2235; 
+  --zv-rust: #778899;/*#be3144; #b22222; */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+body{
+  background: var(--zv-blue);
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+  color: #fff;
+  min-width: 500px;
+}
+
+h1{
+  color: var(--zv-white);
+  font-size: 2.5em;
+}
+
+h2{
+  color: var(--zv-red);
+  font-size: 1.5em;
+}
+
+.name-logo{
+  color: var(--zv-red);
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.nav{
+   vertical-align: middle;
+}
+  #navbar li{
+    margin-right: 10px;
+    margin-left: 10px;
+    list-style-type: none;
+  }
+  #navbar li a {
+    text-decoration: none;
+    color: var(--zv-white);
+    display: inline-block;                  /* pour movi*/
+    transition: transform 0.3s ease-out;    /* pour movi*/ 
+  }
+  #navbar li a:link {
+    color: var(--zv-white); 
+  }
+  #navbar li a:hover {
+    color: var(--zv-red);
+    transform: translateY(8px);             /* pour movi*/ 
+  }
+
+
+
+.nav-list{
+  display: flex;
+  color: var(--zv-white);
+  font-size: 20px;
+}
+
+.up-menu{
+  position: fixed;
+  background: var(--zv-blue);
+  box-shadow: 0.1em 0.1em 5px rgba(122,122,122,0.5);
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  z-index: 99999;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center; /*horizont*/
+}
+
+/** **/
+#navbar-contact-links{
+    display: flex;
+    list-style-type: none;
+    color: var(--zv-white);
+}
+  #navbar-contact-links li{
+    margin-right: 10px;
+    margin-left: 10px;
+    list-style-type: none;
+  }
+  #navbar-contact-links li a {
+    text-decoration: none;
+    color: var(--zv-white);
+    display: inline-block;                  /* pour movi*/
+    transition: transform 0.3s ease-out;    /* pour movi*/ 
+  }
+  #navbar-contact-links li a:link {
+    color: var(--zv-white); 
+  }
+  #navbar-contact-links li a:hover {
+    color: var(--zv-red);
+    transform: translateY(8px);             /* pour movi*/ 
+  }
+.nav-list-contact-links{
+  display: flex;
+  color: var(--zv-white);
+  font-size: 20px;
+}
+
+
+
+/** 
+i.fa { font-size:16px; 
+}
+**/
+
+.content{
+  z-index: 1;
+  padding: 15px;
+}
+
+.welcome-section{
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /*flex-start;*/
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.about-section{
+  background: var(--zv-rust);
+  color: var(--zv-blue);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.about-section h1{
+  color: var(--zv-blue);
+}
+
+.projects-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.sm_border{
+    display: block;
+    height: 2px;
+    width: 70px;
+    margin-bottom: 15px;
+    bottom: -5px;
+    position: relative;
+    align-items: center;
+    left: 50%;
+    background-color: var(--zv-red);
+    transform: translate(-50%, 0);
+}
+.projects-section-header{
+  margin-top: 50px;
+  text-align: center;
+  color: var(--zv-white);
+}
+
+.white{
+  color: var(--zv-white);
+}
+
+.projects-grid{
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: 1fr 1fr; /*  1fr 1fr; here add rows for more projects*/
+  grid-gap: 25px;
+}
+/****************************START ****media***************************************************/
+@media (max-width: 1003px) {
+  .projects-grid{
+      max-width: 1200px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr; /*  1fr 1fr; here add rows for more projects*/
+      grid-gap: 25px;
+  } 
+}
+/****************************END ****media***************************************************/
+
+.project-tile{
+  box-shadow: 0 0 5px 2px var(--zv-red);
+  align-items: center;
+}
+.project-tile:hover
+{ 
+	transform: translateY(-10px);
+	box-shadow: 0 0 15px 10px var(--zv-red);
+}
+
+.project-tile a {
+    text-decoration: none;
+    color: var(--zv-white);
+  }
+
+.project-image{
+  max-width: 100%;
+  min-width: 200px;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+.project-title{
+  color: var(--zv-white);
+  font-style: normal;
+}
+
+.project-title i{
+  color: var(--zv-red);
+}
+
+#form{
+  color: var(--zv-white);
+  background: var(--zv-rust);
+  box-shadow: 0 0 5px 2px var(--zv-red);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#submit{
+  background: var(--zv-blue);
+  border-radius: 10px;
+  color: var(--zv-red);
+  font-weight: bold;
+  width:200px;
+  padding: 10px;
+}
+
+ #submit:hover {
+    background-color : var(--zv-red);
+    color: var(--zv-white);
+}
+
+.center{
+  text-align: center;
+}
+.elem {
+  padding: 5px;
+}
+.width-line{
+  width: 100%;
+ }
+  
+.footer{
+  color: var(--zv-red);
+  font-size: 1em;
+  font-style: italic;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+
+.imageBox  {
+	position: relative;
+	float: left;
+}
+
+ .img-m, .hoverImg{
+  opacity: 0.75;
+  max-width: 100%;
+  min-width: 200px;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+.imageBox .hoverImg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+}
+
+.imageBox:hover .hoverImg {
+  display: block;
+}
+
+</style>
+<!-- zolo -->
+
+<!--  START -- *************// MENU //***********************  -->
+<div class="up-menu">
+  <div class="name-logo">
+    <p>VLAD ZOLO</p>
+  </div>
+  <div id="navbar" class="nav">
+    <ul class="nav-list">
+      <li><a href="#welcome-section">ACCUEIL</a></li>
+      <li><a href="#about-section"  >À PROPOS DE MOI</a></li>
+      <li><a href="#projects">PROJECTS</a></li>
+      <li><a href="#contact"        >CONTACT</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="content">
+<!--  *************// welcome-section //***********************  -->
+    <section id="welcome-section" class="welcome-section">
+      <div class="textImg">
+        <h2>BONJOUR!</h2>
+        <p>Je m'appelle Vlad Zolo</p>
+        <h1>Je suis développeur Web</h1>
+      </div>
+		<div class="imageBox">
+			<img class="img-m" src="http://lions-narbonne-doyen.fr/wp-content/uploads/2021/04/z101.png"
+			alt="ma photo 1">
+			<img class="hoverImg" src="http://lions-narbonne-doyen.fr/wp-content/uploads/2021/04/aple101.png">
+		</div>
+    </section>
+
+<!--  *************// about-section //***********************  -->
+    <section id="about-section" class="about-section">
+      <div class="imageBox">
+        <img class="img-m" src="http://lions-narbonne-doyen.fr/wp-content/uploads/2021/04/z102.png"
+        alt="ma photo 2">
+		<img class="hoverImg" src="http://lions-narbonne-doyen.fr/wp-content/uploads/2021/04/aple102.png">
+      </div>
+      <div>
+        <h1>Mes qualités en tant que<br>développeur Web :</h1>
+        <ul>
+          <li style="list-style: circle">autonome;</li>
+          <li style="list-style: circle">organisé : tenir un planning des tâches à exécuter et respecter les délais;</li>
+          <li style="list-style: circle">travail en équipe;</li>
+          <li style="list-style: circle">s'adapter aux spécificités de chaque projet et de proposer les meilleures solutions;</li>
+          <li style="list-style: circle">réactualise ses connaissances;</li>
+          <li style="list-style: circle">apporte des innovations technologiques.</li>
+        </ul>
+      </div>
+    </section>
+
+<!--  *************// projects//***********************  -->
+    <section id="projects" class="projects-section">
+      <div class="projects-section-header">
+        <h2 class="projects-section-header-text">MES <span class="white">PROJECTS</span></h2>
+        <div class="sm_border"></div>
+      </div>
+
+      <div class="projects-grid">
+ <!--  project 01  -->      
+        <div class="project-tile"> <!--  01- Tribute Page  -->
+            <a id="profile-link"
+              href="https://codepen.io/z-o-l-o/full/ZEpPXVe"
+              target="_blank"
+              class="project-link"
+            >
+              <img
+                class="project-image"
+                src="http://lions-narbonne-doyen.fr/wp-content/uploads/2021/02/01.jpg"
+              />
+              <p class="project-title">
+                <i class="fa fa-arrow-circle-o-right fa-2x fa-fw"></i>
+                Tribute Page
+              </p>
+            </a>
+        </div>
+ <!--  project 02  -->       
+        <div class="project-tile"> <!--  02- Survey Form  -->
+            <a id="profile-link"
+              href="https://codepen.io/z-o-l-o/full/PoGgXPz"
+              target="_blank"
+              class="project-link"
+            >
+              <img
+                class="project-image"
+                src="http://lions-narbonne-doyen.fr/wp-content/uploads/2021/02/03.jpg"
+              />
+              <p class="project-title">
+                <i class="fa fa-arrow-circle-o-right fa-2x fa-fw"></i>
+                Survey Form
+              </p>
+            </a>
+        </div>
+  <!--  project 03  -->        
+        <div class="project-tile"> <!--  03-Product Landing Page  -->
+            <a id="profile-link"
+              href="https://codepen.io/z-o-l-o/full/yLVyPWw"
+              target="_blank"
+              class="project-link"
+            >
+              <img
+                class="project-image"
+                src="http://lions-narbonne-doyen.fr/wp-content/uploads/2021/02/04.jpg"
+              />
+              <p class="project-title">
+                <i class="fa fa-arrow-circle-o-right fa-2x fa-fw"></i>
+                Product Landing Page
+              </p>
+            </a>
+        </div>
+ <!--  project 04  -->         
+        <div class="project-tile"> <!--  04- Technical Documentation Page  -->
+            <a id="profile-link"
+              href="https://codepen.io/z-o-l-o/full/ExNPqLB"
+              target="_blank"
+              class="project-link"
+            >
+              <img
+                class="project-image"
+                src="http://lions-narbonne-doyen.fr/wp-content/uploads/2021/02/02.jpg"
+              />
+              <p class="project-title">
+                <i class="fa fa-arrow-circle-o-right fa-2x fa-fw"></i>
+                Technical Documentation Page
+              </p>
+            </a>
+        </div> 
+ <!--  project 05  -->
+         <div class="project-tile"> <!--  05- CSS: Cœur battant  -->
+            <a id="profile-link"
+              href="https://codepen.io/z-o-l-o/full/MWJpPQZ"
+              target="_blank"
+              class="project-link"
+            >
+              <img
+                class="project-image"
+                src="http://lions-narbonne-doyen.fr/wp-content/uploads/2021/04/05.jpg"
+              />
+              <p class="project-title">
+                <i class="fa fa-arrow-circle-o-right fa-2x fa-fw"></i>
+                CSS: Cœur battant
+              </p>
+            </a>
+        </div> 
+ <!--  project 06  -->
+          <div class="project-tile"> <!--  06- Vue.js: Mes Notes (version 01)  -->
+            <a id="profile-link"
+              href="https://codepen.io/z-o-l-o/full/rNjyPoX"
+              target="_blank"
+              class="project-link"
+            >
+              <img
+                class="project-image"
+                src="http://lions-narbonne-doyen.fr/wp-content/uploads/2021/04/06.jpg"
+              />
+              <p class="project-title">
+                <i class="fa fa-arrow-circle-o-right fa-2x fa-fw"></i>
+                Vue.js: Mes Notes (version 01)
+              </p>
+            </a>
+        </div> 
+ <!--  project 07  -->
+          <div class="project-tile"> <!--  06- Vue.js: Mes Notes Colorees (version 02)  -->
+            <a id="profile-link"
+              href="https://codepen.io/z-o-l-o/full/gOgmEOv"
+              target="_blank"
+              class="project-link"
+            >
+              <img
+                class="project-image"
+                src="http://lions-narbonne-doyen.fr/wp-content/uploads/2021/04/07.jpg"
+              />
+              <p class="project-title">
+                <i class="fa fa-arrow-circle-o-right fa-2x fa-fw"></i>
+                Vue.js: Mes Notes Colorees (version 02)
+              </p>
+            </a>
+        </div> 
+ <!--  project 08  -->
+ 
+      </div>
+    </section>
+
+<!--  *************// contact//***********************  -->
+    <section id="contact" class="welcome-section">
+      <div class="contact-section-header">
+        <h2>Travaillons ensemble......</h2>
+        <p>Je suis sur les réseaux sociaux, et vous?<br><br></p>
+
+        <!--- *************************// réseaux sociaux //***************************************--->
+        <div id="navbar-contact-links" class="nav-contact-links">
+          <ul class="nav-list-contact-links">
+
+            <li><a href="#0">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                </span>
+            </a></li>
+
+            <li><a href="#0">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+            </a></li>
+
+            <li><a href="#0">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                </span>
+            </a></li>    
+
+            <li><a href="#0">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                </span>
+            </a></li>
+
+            <li><a href="mailto:example@example.com">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fas fa-at fa-stack-1x fa-inverse"></i>
+                </span>
+            </a></li>
+
+            <li><a href="tel:555-555-5555"></i>
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fas fa-phone fa-stack-1x fa-inverse"></i>
+                </span>
+             </a></li>
+
+          </ul>
+        </div>  
+          <!--- *************************// contact-form //***************************************--->
+        <div> 
+          <p><br>Formulaire de contact pour votre message....<br><br></p>
+          <form id="form" action="#">
+            <div class="elem">  
+              <label id="name-label" for="name">Nom *:</label>
+              <input class="width-line" type="text" required id="name" name="name" placeholder="Votre nom">
+            </div>
+            <div class="elem">
+              <label id="email-label" for="email">Email *:</label>
+              <input class="width-line" type="email" required id="email" name="email" placeholder="Votre email">
+            </div>  
+            <div class="elem">  
+              <label for="demande">Message :</label>
+              <textarea class="width-line" rows="4" type="text" id="demande" name="demande" placeholder="Écrivez votre commentaire ici"></textarea>
+            </div>
+            <div class = "center">
+              <input id="submit" class="elem" type="submit" name="submit" value="Envoyer">
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="imageBox">
+        <img class="img-m" src="http://lions-narbonne-doyen.fr/wp-content/uploads/2021/04/z103.png"
+        alt="ma photo 3">
+		<img class="hoverImg" src="http://lions-narbonne-doyen.fr/wp-content/uploads/2021/04/aple103.png">
+      </div>
+
+      <!--- *************************// footer //***************************************--->
+    </section>
+
+ <footer class="footer">
+   <p>
+    * Ceci est mon portfolio.
+    <br>
+    ** Voici tous mes projets et missions que j'ai réalisés lors de mes commandes commerciales et de la formation.
+   </p>
+   <p style="color: var(--zv-white);">
+    Copyright 2021, @zolo
+   </p>
+ </footer>
+
+</div>
+
+
+
+
+
